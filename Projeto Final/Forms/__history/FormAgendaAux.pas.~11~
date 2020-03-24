@@ -1,0 +1,52 @@
+unit FormAgendaAux;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Buttons;
+
+type
+  TfrmAgendaAux = class(TForm)
+    DBGrid1: TDBGrid;
+    dstClientes: TDataSource;
+    Label1: TLabel;
+    Label2: TLabel;
+    DBEdit1: TDBEdit;
+    Label3: TLabel;
+    DBEdit2: TDBEdit;
+    Label4: TLabel;
+    DBEdit3: TDBEdit;
+    dstAgenda: TDataSource;
+    btnSalvar: TBitBtn;
+    btnFechar: TBitBtn;
+    procedure btnFecharClick(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmAgendaAux: TfrmAgendaAux;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule;
+
+procedure TfrmAgendaAux.btnFecharClick(Sender: TObject);
+begin
+  Dm.cdsAgenda.Cancel;
+  Close;
+end;
+
+procedure TfrmAgendaAux.btnSalvarClick(Sender: TObject);
+begin
+  Dm.cdsAgenda.Post;
+end;
+
+end.

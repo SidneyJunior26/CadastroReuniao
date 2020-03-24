@@ -1,0 +1,141 @@
+object frmAgendaAux: TfrmAgendaAux
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  Caption = 'Cria'#231#227'o/Edi'#231#227'o de Agendamentos'
+  ClientHeight = 407
+  ClientWidth = 447
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 133
+    Width = 92
+    Height = 13
+    Caption = 'Selecione o cliente:'
+  end
+  object Label2: TLabel
+    Left = 8
+    Top = 8
+    Width = 39
+    Height = 13
+    Caption = 'Assunto'
+    FocusControl = DBEdit1
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 48
+    Width = 46
+    Height = 13
+    Caption = 'Descri'#231#227'o'
+    FocusControl = DBEdit2
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 88
+    Width = 23
+    Height = 13
+    Caption = 'Data'
+    FocusControl = DBEdit3
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 152
+    Width = 431
+    Height = 170
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'APELIDO'
+        Title.Alignment = taCenter
+        Title.Caption = 'Apelido'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 122
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'RAZAOSOCIAL'
+        Title.Alignment = taCenter
+        Title.Caption = 'Raz'#227'o Social'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 279
+        Visible = True
+      end>
+  end
+  object DBEdit1: TDBEdit
+    Left = 8
+    Top = 24
+    Width = 431
+    Height = 21
+    DataField = 'ASSUNTO'
+    DataSource = Dm.DsAgenda
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 8
+    Top = 64
+    Width = 429
+    Height = 21
+    DataField = 'DESCRICAO'
+    DataSource = Dm.DsAgenda
+    TabOrder = 2
+  end
+  object DBEdit3: TDBEdit
+    Left = 8
+    Top = 104
+    Width = 75
+    Height = 21
+    DataField = 'DATA'
+    DataSource = Dm.DsAgenda
+    MaxLength = 8
+    TabOrder = 3
+  end
+  object btnSalvar: TBitBtn
+    Left = 283
+    Top = 328
+    Width = 75
+    Height = 75
+    Caption = 'Salvar'
+    Layout = blGlyphTop
+    TabOrder = 4
+  end
+  object btnFechar: TBitBtn
+    Left = 364
+    Top = 328
+    Width = 75
+    Height = 75
+    Caption = 'Fechar'
+    Layout = blGlyphTop
+    TabOrder = 5
+  end
+  object dstClientes: TDataSource
+    Left = 72
+    Top = 208
+  end
+  object dstAgenda: TDataSource
+    Left = 144
+    Top = 208
+  end
+end

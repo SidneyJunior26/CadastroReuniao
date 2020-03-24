@@ -1,0 +1,19 @@
+program ProjetoFinal;
+
+uses
+  Vcl.Forms,
+  FormPrincipal in 'Forms\FormPrincipal.pas' {frmPrincipal},
+  DataModule in 'Forms\DataModule.pas' {Dm: TDataModule},
+  FormCadClientes in 'Forms\FormCadClientes.pas' {frmCadClientes},
+  FormAgendamentos in 'Forms\FormAgendamentos.pas' {frmAgendamentos};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  AppApplication.CreateForm(TDm, Dm);
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TfrmAgendamentos, frmAgendamentos);
+  lication.Run;
+end.
